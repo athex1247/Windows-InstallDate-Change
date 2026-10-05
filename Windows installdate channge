@@ -1,0 +1,1 @@
+$dt=[datetime]"2026-01-01 12:00:00"; $unix=([DateTimeOffset]$dt).ToUnixTimeSeconds(); $ft=$dt.ToFileTimeUtc(); Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name InstallDate -Type DWord -Value $unix; Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name InstallTime -Type QWord -Value $ft
